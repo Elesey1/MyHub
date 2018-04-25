@@ -1,0 +1,11 @@
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\bin\Debug\netstandard2.0\CurrenciesApp.deps.json
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\bin\Debug\netstandard2.0\CurrenciesApp.dll
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\bin\Debug\netstandard2.0\CurrenciesApp.pdb
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.csproj.CoreCompileInputs.cache
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.App.xaml.g.cs
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.AssemblyInfoInputs.cache
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.AssemblyInfo.cs
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.dll
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.pdb
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.csprojResolveAssemblyReference.cache
+D:\Работка\CurrenciesApp\CurrenciesApp\CurrenciesApp\obj\Debug\netstandard2.0\CurrenciesApp.View.PrimaryPage.xaml.g.cs

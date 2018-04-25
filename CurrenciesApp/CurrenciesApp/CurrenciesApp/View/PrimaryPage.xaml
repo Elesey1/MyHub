@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CurrenciesApp.ViewModel"
+             x:Class="CurrenciesApp.View.PrimaryPage">
+    <ContentPage.BindingContext>
+        <viewModels:PrimaryPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <RelativeLayout x:Name="mainStack">
+            <RelativeLayout x:Name="statusText"                     
+                     RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToParent, Property=X, Factor=1, Constant=5}"
+                     RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=2}">
+
+                <Label x:Name="statusDescr" Text="Status:" FontSize="Small" TextColor="Black"/>
+                <Label x:Name="statusInfo" Text="{Binding StatusString}" FontSize="Small" TextColor="{Binding StatusColor}"
+                       RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=statusDescr, Property=Width, Factor=1, Constant=10}"
+                       RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=statusDescr, Property=Y,  Factor=1, Constant=0}"/>
+                
+                <Label x:Name="description" Text="Choose base currency in FROM field, and target currency in TO field" TextColor="Black"
+                       RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=statusDescr, Property=X, Factor=1, Constant=0}"
+                       RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=statusInfo, Property=Height,  Factor=1, Constant=5}"/>
+            </RelativeLayout>
+
+            <RelativeLayout x:Name="fields" 
+                            RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToParent, Property=X, Factor=1, Constant=0}"
+                            RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=statusText, Property=Height,  Factor=1, Constant=5}">
+
+                <Picker x:Name="fromPicker" ItemsSource="{Binding CurrenciesList}" SelectedItem="{Binding FromSelected}" Title="From"
+                            WidthRequest="500"/>
+                <Picker x:Name="toPicker" ItemsSource="{Binding CurrenciesList}" SelectedItem="{Binding ToSelected}" Title="To"
+                            RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=fromPicker, Property=Height, Factor=1, Constant=10}"
+                            WidthRequest="500"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout x:Name="conversionAndResult" 
+                            RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=fields, Property=X, Factor=1, Constant=0}"
+                            RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=fields, Property=Height,  Factor=1.75, Constant=5}">
+
+                <Entry x:Name="sumToConvert" WidthRequest="500" Keyboard="Numeric" Text="{Binding Entry}"/>
+
+                <Button x:Name="conversionButton" Text="Start conversion" Command="{Binding Convert}"
+                        RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=sumToConvert, Property=X, Factor=1, Constant=0}"
+                        RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=sumToConvert, Property=Height,  Factor=1, Constant=10}"/>
+
+                <Label x:Name="resultDescr" Text="Result:" FontSize="Small" TextColor="Black"
+                                            RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=conversionButton, Property=Width, Factor=1, Constant=10}"
+                                            RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=conversionButton, Property=Y,  Factor=1, Constant=5}"/>
+                
+                <Label x:Name="resultInfo" Text="{Binding ConversionResult}"  TextColor="Black" FontSize="Medium"
+                                           RelativeLayout.XConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=resultDescr, Property=X, Factor=1, Constant=0}"
+                                           RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=resultDescr, Property=Y,  Factor=1, Constant=20}"/>
+            </RelativeLayout>
+            
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
